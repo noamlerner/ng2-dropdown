@@ -29,7 +29,7 @@ Simple dropdown for your angular2 applications using bootstrap3. Does not depend
 
 ```typescript
 import {Component} from "angular2/core";
-import {DROPDOWN_DIRECTIVES} from "../../src/ng2-dropdown";
+import {DROPDOWN_DIRECTIVES} from "ng2-dropdown/ng2-dropdown";
 
 @Component({
     selector: "app",
