@@ -1,4 +1,4 @@
-import {Directive, ElementRef, ContentChild} from "angular2/core";
+import {Directive, ElementRef, ContentChild, Output, EventEmitter} from "angular2/core";
 import {DropdownNotClosableZone} from "./DropdownNotClosableZone";
 
 @Directive({
@@ -12,6 +12,12 @@ export class Dropdown {
 
     @ContentChild(DropdownNotClosableZone)
     notClosableZone: DropdownNotClosableZone;
+
+    @Output()
+    onOpen = new EventEmitter();
+
+    @Output()
+    onClose = new EventEmitter();
 
     // -------------------------------------------------------------------------
     // Constructor
@@ -27,11 +33,13 @@ export class Dropdown {
     open() {
         const element: HTMLElement = this.elementRef.nativeElement;
         element.classList.add("open");
+        this.onOpen.emit(undefined);
     }
 
     close() {
         const element: HTMLElement = this.elementRef.nativeElement;
         element.classList.remove("open");
+        this.onClose.emit(undefined);
     }
 
     isInClosableZone(element: HTMLElement) {

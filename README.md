@@ -9,7 +9,7 @@ Simple dropdown for your angular2 applications using bootstrap3. Does not depend
 ## Usage
 
 ```typescript
-<div class="dropdown" dropdown>
+<div class="dropdown" dropdown (onOpen)="doSomeActionOnOpen()" (onClose)="doSomeActionOnClose()">
     <button class="btn btn-primary" dropdown-open>My Heroes</button>
     <ul class="dropdown-menu">
         <li><a>Badman</a></li>
@@ -20,6 +20,8 @@ Simple dropdown for your angular2 applications using bootstrap3. Does not depend
 ```
 
 * `dropdown` directive is used to specify where your dropdown starts
+    * `(onOpen)` in dropdown is called when dropdown is opened
+    * `(onClose)` in dropdown is called when dropdown is closed
 * `dropdown-open` is used on `a`, `button` or any other clickable element to open a dropdown on its click
 * `dropdown-not-closable-zone` (not used in the example above, however is used in the examples below) is used
     to prevent closing dropdown when you click on its elements. Its highly usable when you want to create

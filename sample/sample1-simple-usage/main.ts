@@ -40,12 +40,33 @@ import {DROPDOWN_DIRECTIVES} from "../../src/ng2-dropdown";
             <li><a>dynamic content into it</a></li>
         </ul>
     </div>
+    <br/>
+    
+    <!-- dropdown that can listen to events -->
+    <div class="dropdown" dropdown (onOpen)="printOpening()" (onClose)="printClosing()">
+        <button class="btn btn-primary" dropdown-open>Not closable on items click</button>
+        <ul class="dropdown-menu" dropdown-not-closable-zone>
+            <li><a>This dropdown will</a></li>
+            <li><a>not be closed when you</a></li>
+            <li><a>select any its items</a></li>
+            <li><a>this allows you to put</a></li>
+            <li><a>dynamic content into it</a></li>
+        </ul>
+    </div>
     
 </div>
 `,
     directives: [DROPDOWN_DIRECTIVES]
 })
 export class Sample1App {
+
+    printOpening() {
+        console.log("opened!");
+    }
+
+    printClosing() {
+        console.log("closed!");
+    }
 
 }
 
