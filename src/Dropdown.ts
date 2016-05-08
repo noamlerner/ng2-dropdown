@@ -1,4 +1,4 @@
-import {Directive, ElementRef, ContentChild, Output, EventEmitter} from "angular2/core";
+import {Directive, ElementRef, ContentChild, Output, EventEmitter} from "@angular/core";
 import {DropdownNotClosableZone} from "./DropdownNotClosableZone";
 
 @Directive({

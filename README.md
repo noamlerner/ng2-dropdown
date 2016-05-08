@@ -4,7 +4,21 @@ Simple dropdown for your angular2 applications using bootstrap3. Does not depend
 
 ## Installation
 
+1. Install npm module:
+
 `npm install ng2-dropdown --save`
+
+2. If you are using system.js you may want to add this into `map` and `package` config:
+
+```json
+{
+    "map": {
+        "ng2-dropdown": "node_modules/ng2-dropdown"
+    },
+    "packages": {
+        "ng2-dropdown": { "main": "index.js", "defaultExtension": "js" }
+    }
+}
 
 ## Usage
 
@@ -30,8 +44,8 @@ Simple dropdown for your angular2 applications using bootstrap3. Does not depend
 ## Sample
 
 ```typescript
-import {Component} from "angular2/core";
-import {DROPDOWN_DIRECTIVES} from "ng2-dropdown/ng2-dropdown";
+import {Component} from "@angular/core";
+import {DROPDOWN_DIRECTIVES} from "ng2-dropdown";
 
 @Component({
     selector: "app",
