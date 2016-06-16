@@ -21,10 +21,11 @@ Please star a project if you liked it, or create an issue if you have problems w
         "ng2-dropdown": { "main": "index.js", "defaultExtension": "js" }
     }
 }
+```
 
 ## Usage
 
-```typescript
+```html
 <div class="dropdown" dropdown (onOpen)="doSomeActionOnOpen()" (onClose)="doSomeActionOnClose()">
     <button class="btn btn-primary" dropdown-open>My Heroes</button>
     <ul class="dropdown-menu">
