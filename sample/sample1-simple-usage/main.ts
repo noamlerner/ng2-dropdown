@@ -44,13 +44,13 @@ import {DROPDOWN_DIRECTIVES} from "../../src/index";
     
     <!-- dropdown that can listen to events -->
     <div class="dropdown" dropdown (onOpen)="printOpening()" (onClose)="printClosing()">
-        <button class="btn btn-primary" dropdown-open>Not closable on items click</button>
-        <ul class="dropdown-menu" dropdown-not-closable-zone>
-            <li><a>This dropdown will</a></li>
-            <li><a>not be closed when you</a></li>
-            <li><a>select any its items</a></li>
-            <li><a>this allows you to put</a></li>
-            <li><a>dynamic content into it</a></li>
+        <button class="btn btn-primary" dropdown-open>Click and checkout console</button>
+        <ul class="dropdown-menu" [dropdown-not-closable-zone]="false">
+            <li><a>Check console - it has onOpen and onClose events!</a></li>
+            <li><a>Also this dropdown can be closed</a></li>
+            <li><a>even it uses a dropdown-not-closable-zone</a></li>
+            <li><a>because dropdown-not-closable-zone is set to false</a></li>
+            <li><a>this way you can control your closable zone.</a></li>
         </ul>
     </div>
     
