@@ -29,7 +29,8 @@ export class DropdownOpen implements OnDestroy {
     // Public Methods
     // -------------------------------------------------------------------------
 
-    @HostListener('click')
+    @HostListener("click")
+    @HostListener("focus")
     openDropdown() {
         this.dropdown.open();
         document.addEventListener("click", this.closeDropdownOnOutsideClick, true);
