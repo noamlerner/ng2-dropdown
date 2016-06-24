@@ -10,7 +10,7 @@ export class Dropdown {
     // Inputs / Outputs
     // -------------------------------------------------------------------------
 
-    @Input()
+    @Input("dropdownToggle")
     toggleClick = true;
 
     @Output()

@@ -26,7 +26,7 @@ Please star a project if you liked it, or create an issue if you have problems w
 ## Usage
 
 ```html
-<div class="dropdown" dropdown [toggleClick]="false" (onOpen)="doSomeActionOnOpen()" (onClose)="doSomeActionOnClose()">
+<div class="dropdown" dropdown [dropdownToggle]="false" (onOpen)="doSomeActionOnOpen()" (onClose)="doSomeActionOnClose()">
     <button class="btn btn-primary" dropdown-open>My Heroes</button>
     <ul class="dropdown-menu">
         <li><a>Badman</a></li>
@@ -37,7 +37,7 @@ Please star a project if you liked it, or create an issue if you have problems w
 ```
 
 * `dropdown` directive is used to specify where your dropdown starts
-    * `toggleClick` Indicates if dropdown should be closed when user double-clicks the dropdown opening button. Default is **true**.
+    * `dropdownToggle` Indicates if dropdown should be closed when user double-clicks the dropdown opening button. Default is **true**.
     * `(onOpen)` in dropdown is called when dropdown is opened
     * `(onClose)` in dropdown is called when dropdown is closed
 * `dropdown-open` is used on `a`, `button` or any other clickable element to open a dropdown on its click
