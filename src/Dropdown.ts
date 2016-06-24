@@ -1,4 +1,4 @@
-import {Directive, ElementRef, ContentChild, Output, EventEmitter} from "@angular/core";
+import {Directive, ElementRef, ContentChild, Output, EventEmitter, Input} from "@angular/core";
 import {DropdownNotClosableZone} from "./DropdownNotClosableZone";
 
 @Directive({
@@ -7,17 +7,24 @@ import {DropdownNotClosableZone} from "./DropdownNotClosableZone";
 export class Dropdown {
 
     // -------------------------------------------------------------------------
-    // Properties
+    // Inputs / Outputs
     // -------------------------------------------------------------------------
 
-    @ContentChild(DropdownNotClosableZone)
-    notClosableZone: DropdownNotClosableZone;
+    @Input()
+    toggleClick = true;
 
     @Output()
     onOpen = new EventEmitter();
 
     @Output()
     onClose = new EventEmitter();
+
+    // -------------------------------------------------------------------------
+    // Properties
+    // -------------------------------------------------------------------------
+
+    @ContentChild(DropdownNotClosableZone)
+    notClosableZone: DropdownNotClosableZone;
 
     // -------------------------------------------------------------------------
     // Constructor
@@ -40,6 +47,11 @@ export class Dropdown {
         const element: HTMLElement = this.elementRef.nativeElement;
         element.classList.remove("open");
         this.onClose.emit(undefined);
+    }
+
+    isOpened() {
+        const element: HTMLElement = this.elementRef.nativeElement;
+        return element.classList.contains("open");
     }
 
     isInClosableZone(element: HTMLElement) {
