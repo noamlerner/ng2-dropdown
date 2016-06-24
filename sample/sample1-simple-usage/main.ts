@@ -53,6 +53,17 @@ import {DROPDOWN_DIRECTIVES} from "../../src/index";
             <li><a>this way you can control your closable zone.</a></li>
         </ul>
     </div>
+
+    <!-- more dynamic dropdown -->
+    <div class="dropdown" dropdown>
+        <button dropdown-open><a>My Heroes</a></button>
+        <ul class="dropdown-menu">
+            <li><a>Badman</a></li>
+            <li><a>Sadman</a></li>
+            <li><a>Lieman</a></li>
+        </ul>
+    </div>
+    <br/>
     
 </div>
 `,

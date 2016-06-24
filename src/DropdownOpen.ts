@@ -10,7 +10,11 @@ export class DropdownOpen implements OnDestroy {
     // Private Properties
     // -------------------------------------------------------------------------
 
-    private justOpened: boolean = false;
+    /**
+     * This hack is needed for dropdown not to open and instantly closed
+     */
+    private openedByFocus: boolean = false;
+
     private closeDropdownOnOutsideClick = (event: MouseEvent) => this.close(event);
 
     // -------------------------------------------------------------------------
@@ -27,7 +31,10 @@ export class DropdownOpen implements OnDestroy {
 
     @HostListener("click")
     openDropdown() {
-        if (this.justOpened) return;
+        if (this.openedByFocus) {
+            this.openedByFocus = false;
+            return;
+        }
 
         if (this.dropdown.isOpened() && this.dropdown.toggleClick) {
             this.dropdown.close();
@@ -40,10 +47,9 @@ export class DropdownOpen implements OnDestroy {
 
     @HostListener("focus")
     onFocus() {
-        this.justOpened = true;
+        this.openedByFocus = true;
         this.dropdown.open();
         document.addEventListener("click", this.closeDropdownOnOutsideClick, true);
-        setTimeout(() => this.justOpened = false, 10); // this hack is needed for dropdown not to open and instantly closed
     }
 
     @HostListener("blur", ["$event"])
@@ -70,7 +76,9 @@ export class DropdownOpen implements OnDestroy {
     // -------------------------------------------------------------------------
 
     private close(event: Event) {
-        if (!this.dropdown.isInClosableZone(<HTMLElement> event.target) && event.target !== this.elementRef.nativeElement) {
+        if (!this.dropdown.isInClosableZone(<HTMLElement> event.target)
+            && event.target !== this.elementRef.nativeElement
+            && !this.elementRef.nativeElement.contains(event.target)) {
             this.dropdown.close();
             document.removeEventListener("click", this.closeDropdownOnOutsideClick);
         }
