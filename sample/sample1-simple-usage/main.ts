@@ -9,11 +9,11 @@ import {DROPDOWN_DIRECTIVES} from "../../src/index";
 
     <!-- a-style dropdown -->
     <div class="dropdown" dropdown>
-        <a dropdown-open>My Heroes</a>
+        <a href="#" dropdown-open>My Heroes</a>
         <ul class="dropdown-menu">
-            <li><a>Badman</a></li>
-            <li><a>Sadman</a></li>
-            <li><a>Lieman</a></li>
+            <li><a href="#" (click)="select()">Badman</a></li>
+            <li><a href="#">Sadman</a></li>
+            <li><a href="#">Lieman</a></li>
         </ul>
     </div>
     <br/>
@@ -22,9 +22,9 @@ import {DROPDOWN_DIRECTIVES} from "../../src/index";
     <div class="dropdown" dropdown>
         <button class="btn btn-primary" dropdown-open>My Heroes</button>
         <ul class="dropdown-menu">
-            <li><a>Badman</a></li>
-            <li><a>Sadman</a></li>
-            <li><a>Lieman</a></li>
+            <li><a href="#" (click)="select()">Badman</a></li>
+            <li><a href="http://google.com">Sadman</a></li>
+            <li><a href="#">Lieman</a></li>
         </ul>
     </div>
     <br/>
@@ -33,11 +33,11 @@ import {DROPDOWN_DIRECTIVES} from "../../src/index";
     <div class="dropdown" dropdown>
         <button class="btn btn-primary" dropdown-open>Not closable on items click</button>
         <ul class="dropdown-menu" dropdown-not-closable-zone>
-            <li><a>This dropdown will</a></li>
-            <li><a>not be closed when you</a></li>
-            <li><a>select any its items</a></li>
-            <li><a>this allows you to put</a></li>
-            <li><a>dynamic content into it</a></li>
+            <li><a href="#">This dropdown will</a></li>
+            <li><a href="#">not be closed when you</a></li>
+            <li><a href="#">select any its items</a></li>
+            <li><a href="#">this allows you to put</a></li>
+            <li><a href="#">dynamic content into it</a></li>
         </ul>
     </div>
     <br/>
@@ -46,11 +46,11 @@ import {DROPDOWN_DIRECTIVES} from "../../src/index";
     <div class="dropdown" dropdown (onOpen)="printOpening()" (onClose)="printClosing()">
         <button class="btn btn-primary" dropdown-open>Click and checkout console</button>
         <ul class="dropdown-menu" [dropdown-not-closable-zone]="false">
-            <li><a>Check console - it has onOpen and onClose events!</a></li>
-            <li><a>Also this dropdown can be closed</a></li>
-            <li><a>even it uses a dropdown-not-closable-zone</a></li>
-            <li><a>because dropdown-not-closable-zone is set to false</a></li>
-            <li><a>this way you can control your closable zone.</a></li>
+            <li><a href="#">Check console - it has onOpen and onClose events!</a></li>
+            <li><a href="#">Also this dropdown can be closed</a></li>
+            <li><a href="#">even it uses a dropdown-not-closable-zone</a></li>
+            <li><a href="#">because dropdown-not-closable-zone is set to false</a></li>
+            <li><a href="#">this way you can control your closable zone.</a></li>
         </ul>
     </div>
 
@@ -58,9 +58,9 @@ import {DROPDOWN_DIRECTIVES} from "../../src/index";
     <div class="dropdown" dropdown>
         <button dropdown-open><a>My Heroes</a></button>
         <ul class="dropdown-menu">
-            <li><a>Badman</a></li>
-            <li><a>Sadman</a></li>
-            <li><a>Lieman</a></li>
+            <li><a href="#">Badman</a></li>
+            <li><a href="#">Sadman</a></li>
+            <li><a href="#">Lieman</a></li>
         </ul>
     </div>
     <br/>
@@ -77,6 +77,10 @@ export class Sample1App {
 
     printClosing() {
         console.log("closed!");
+    }
+
+    select() {
+        console.log("selected");
     }
 
 }

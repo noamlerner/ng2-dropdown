@@ -60,9 +60,9 @@ import {DROPDOWN_DIRECTIVES} from "ng2-dropdown";
     <div class="dropdown" dropdown>
         <a dropdown-open>My Heroes</a>
         <ul class="dropdown-menu">
-            <li><a>Badman</a></li>
-            <li><a>Sadman</a></li>
-            <li><a>Lieman</a></li>
+            <li><a href="#">Badman</a></li>
+            <li><a href="#">Sadman</a></li>
+            <li><a href="#">Lieman</a></li>
         </ul>
     </div>
     <br/>
@@ -71,9 +71,9 @@ import {DROPDOWN_DIRECTIVES} from "ng2-dropdown";
     <div class="dropdown" dropdown>
         <button class="btn btn-primary" dropdown-open>My Heroes</button>
         <ul class="dropdown-menu">
-            <li><a>Badman</a></li>
-            <li><a>Sadman</a></li>
-            <li><a>Lieman</a></li>
+            <li><a href="#">Badman</a></li>
+            <li><a href="#">Sadman</a></li>
+            <li><a href="#">Lieman</a></li>
         </ul>
     </div>
     <br/>
@@ -82,11 +82,11 @@ import {DROPDOWN_DIRECTIVES} from "ng2-dropdown";
     <div class="dropdown" dropdown>
         <button class="btn btn-primary" dropdown-open>Not closable on items click</button>
         <ul class="dropdown-menu" dropdown-not-closable-zone>
-            <li><a>This dropdown will</a></li>
-            <li><a>not be closed when you</a></li>
-            <li><a>select any its items</a></li>
-            <li><a>this allows you to put</a></li>
-            <li><a>dynamic content into it</a></li>
+            <li><a href="#">This dropdown will</a></li>
+            <li><a href="#">not be closed when you</a></li>
+            <li><a href="#">select any its items</a></li>
+            <li><a href="#">this allows you to put</a></li>
+            <li><a href="#">dynamic content into it</a></li>
         </ul>
     </div>
 
