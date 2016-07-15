@@ -12,8 +12,8 @@ export class DropdownOpen implements OnDestroy {
 
     /**
      * This hack is needed for dropdown not to open and instantly closed
-
-    private openedByFocus: boolean = false;*/
+     */
+    private openedByFocus: boolean = false;
 
     private closeDropdownOnOutsideClick = (event: MouseEvent) => this.close(event);
 
@@ -31,10 +31,10 @@ export class DropdownOpen implements OnDestroy {
 
     @HostListener("click")
     openDropdown() {
-        /*if (this.openedByFocus) {
+        if (this.dropdown.activateOnFocus && this.openedByFocus) {
             this.openedByFocus = false;
             return;
-        }*/
+        }
 
         if (this.dropdown.isOpened() && this.dropdown.toggleClick) {
             this.dropdown.close();
@@ -52,8 +52,9 @@ export class DropdownOpen implements OnDestroy {
         }
     }
 
-    /*@HostListener("focus")
+    @HostListener("focus")
     onFocus() {
+        if (!this.dropdown.activateOnFocus) return;
         this.openedByFocus = true;
         this.dropdown.open();
         document.addEventListener("click", this.closeDropdownOnOutsideClick, true);
@@ -61,6 +62,7 @@ export class DropdownOpen implements OnDestroy {
 
     @HostListener("blur", ["$event"])
     onBlur(event: FocusEvent) {
+        if (!this.dropdown.activateOnFocus) return;
         if (event.relatedTarget &&
             !this.dropdown.isInClosableZone(<HTMLElement> event.relatedTarget) &&
             event.relatedTarget !== this.elementRef.nativeElement) {
@@ -68,7 +70,7 @@ export class DropdownOpen implements OnDestroy {
             this.dropdown.close();
             document.removeEventListener("click", this.closeDropdownOnOutsideClick);
         }
-    }*/
+    }
 
     // -------------------------------------------------------------------------
     // Lifecycle Methods

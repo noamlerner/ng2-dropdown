@@ -13,6 +13,9 @@ export class Dropdown {
     @Input("dropdownToggle")
     toggleClick = true;
 
+    @Input("dropdownFocusActivate")
+    activateOnFocus = false;
+
     @Output()
     onOpen = new EventEmitter();
 

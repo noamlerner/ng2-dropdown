@@ -54,7 +54,7 @@ import {DROPDOWN_DIRECTIVES} from "../../src/index";
         </ul>
     </div>
 
-    <!-- more dynamic dropdown -->
+    <!-- dropdown that can be activated on focus -->
     <div class="dropdown" dropdown>
         <button dropdown-open><a>My Heroes</a></button>
         <ul class="dropdown-menu">
