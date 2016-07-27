@@ -2,7 +2,8 @@ import {Directive, ElementRef, ContentChild, Output, EventEmitter, Input} from "
 import {DropdownNotClosableZone} from "./DropdownNotClosableZone";
 
 @Directive({
-    selector: "[dropdown]"
+    selector: "[dropdown]",
+    exportAs: "dropdown"
 })
 export class Dropdown {
 
