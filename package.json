@@ -22,6 +22,7 @@
     "typescript",
     "angular2-dropdown"
   ],
+  "main": "index.js",
   "peerDependencies": {
     "@angular/core": "^2.0.0-rc.1"
   },
