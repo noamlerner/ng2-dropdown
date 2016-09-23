@@ -1,13 +1,12 @@
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
+import {DropdownNotClosableZone} from "./DropdownNotClosableZone";
+import {Dropdown} from "./Dropdown";
+import {DropdownOpen} from "./DropdownOpen";
 
 export * from "./DropdownNotClosableZone";
 export * from "./Dropdown";
 export * from "./DropdownOpen";
-
-import {DropdownNotClosableZone} from "./DropdownNotClosableZone";
-import {Dropdown} from "./Dropdown";
-import {DropdownOpen} from "./DropdownOpen";
 
 @NgModule({
     imports: [

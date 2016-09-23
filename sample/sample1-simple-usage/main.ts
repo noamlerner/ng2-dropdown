@@ -1,7 +1,7 @@
 import {Component, NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
-import {DropdownModule} from "../../src/index";
 import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
+import {DropdownModule} from "../../src/index";
 
 @Component({
     selector: "app",
