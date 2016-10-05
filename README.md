@@ -49,7 +49,7 @@ Please star a project if you liked it, or create an issue if you have problems w
 
 ```typescript
 import {Component} from "@angular/core";
-import {DROPDOWN_DIRECTIVES} from "ng2-dropdown";
+import {DropdownModule} from "ng2-dropdown";
 
 @Component({
     selector: "app",
@@ -91,12 +91,29 @@ import {DROPDOWN_DIRECTIVES} from "ng2-dropdown";
     </div>
 
 </div>
-`,
-    directives: [DROPDOWN_DIRECTIVES]
+`
 })
-export class App {
+export class AppComponent {
 
 }
+
+@NgModule({
+    imports: [
+        BrowserModule,
+        DropdownModule
+    ],
+    declarations: [
+        AppComponent
+    ],
+    bootstrap: [
+        AppComponent
+    ]
+})
+export class AppModule {
+
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
 ```
 
 Take a look on samples in [./sample](https://github.com/pleerock/ng2-dropdown/tree/master/sample) for more examples of
